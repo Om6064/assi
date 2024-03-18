@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <label>enter check-in date </label>
+    <input type="date" id="check-in"><br>
+    <label>enter check out date</label>
+    <input type="date" id="check-out"><br>
+    <button id="calc" onclick="aa()">enter</button>
+    <div id="display"></div>
+</body>
+</html>
+<script>
+    var todaydate=new Date().toISOString().split('T')[0];
+    document.getElementById('check-in').setAttribute('min',todaydate);
+    document.getElementById('check-out').setAttribute('min',todaydate);
+    function aa(){
+        let cin=document.getElementById('check-in').value;
+        let cout=document.getElementById('check-out').value;
+        document.getElementById('display').innerHTML=cin;"<br>"
+        document.getElementById('display').innerHTML+=cout;
+
+        if(cin==cout){
+alert('CHECK IN DATE AND CHECK OUT DATE CANNOT BE A SAME');
+        }
+    }
+</script>
